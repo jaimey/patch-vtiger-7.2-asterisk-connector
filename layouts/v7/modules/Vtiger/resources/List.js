@@ -2266,6 +2266,12 @@ Vtiger.Class("Vtiger_List_Js", {
 			e.stopPropagation();
 		});
 	},
+    registerAudioFieldClickEvent: function() {
+        var listViewContentDiv = this.getListViewContainer();       		
+        listViewContentDiv.on('click', 'audio', function (e) {
+			e.stopPropagation();
+		});
+    },
 	registerConfigureColumnsEvents: function () {
 		var thisInstance = this;
 		var listViewContentDiv = this.getListViewContainer();
@@ -2477,6 +2483,7 @@ Vtiger.Class("Vtiger_List_Js", {
 		this.registerDynamicDropdownPosition();
 		this.registerDropdownPosition();
 		this.registerConfigureColumnsEvents();
+		this.registerAudioFieldClickEvent();
 		var recordSelectTrackerObj = this.getRecordSelectTrackerInstance();
 		recordSelectTrackerObj.registerEvents();
 
